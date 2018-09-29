@@ -14,6 +14,7 @@ private:
 	uint mem_allocation = 0;
 
 public:
+
 	//CONSTRUCTORS
 	string()
 	{
@@ -21,16 +22,17 @@ public:
 		mem_allocation = 0;
 	}
 
-	string(const char *pointerToString)
+	string(const char *inputString)
 	{
-		mem_allocation = strlen(pointerToString);
+		mem_allocation = strlen(inputString);
 		str = new char[mem_allocation + 1]; // +1 because all strings end in \0
+		strcpy(str, inputString);
 	}
 
-	string(const char &pointerToString)
+	string(string& copyString)
 	{
-		char *copyString = new char[mem_allocation + 1];
-		strcpy(copyString, str);
+		str = new char[copyString.mem_allocation];
+		strcpy(str, copyString.str);
 	}
 
 
@@ -38,6 +40,7 @@ public:
 	~string()
 	{
 		delete[] str;
+		str = nullptr;
 	}
 
 };
