@@ -48,7 +48,7 @@ public:
 	{
 		str[0] = '\0';
 	}
-	/*stringClass operator= (stringClass &string)
+	stringClass operator= (stringClass &string)
 	{
 		delete[] str;
 		if (mem_allocation = string.size() != 0)
@@ -64,7 +64,13 @@ public:
 				str[i] = string[i];
 			return *this;
 		}
-	}*/
+
+		//prefix a.prefix("hello");
+		//it pushes hello to the existing string
+		//make operator +=
+
+
+	}
 };
 #endif // !_STRING_H_
 
